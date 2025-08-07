@@ -1,16 +1,17 @@
-import { Input } from '@/components/ui/input';
-import { Button } from './ui/button';
+import { Input } from "@/components/ui/input"
+
+import { Button } from "./ui/button"
 
 export default function NewsletterSignup() {
   return (
-    <div className="w-full bg-[#3faf54] py-20 relative overflow-hidden flex flex-col items-start px-4 md:px-16">
+    <div className="relative flex w-full flex-col items-start overflow-hidden bg-[#3faf54] px-4 py-20 md:px-16">
       <svg
         width={1440}
         height={442}
         viewBox="0 0 1440 442"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="w-full absolute top-0 left-0 h-full object-cover"
+        className="absolute top-0 left-0 h-full w-full object-cover"
         preserveAspectRatio="none"
       >
         <mask
@@ -36,7 +37,7 @@ export default function NewsletterSignup() {
           <path
             d="M1047.22 335.935C1047.16 336.113 1047.15 336.095 1047.22 335.935V335.935Z"
             fill="#E9A6D4"
-            />
+          />
           <path
             d="M1051.95 353.019C1051.89 353.114 1051.82 353.264 1052.01 352.926C1052 352.946 1051.99 352.966 1051.97 352.986C1051.97 352.997 1051.96 353.008 1051.95 353.019Z"
             fill="#E9A6D4"
@@ -60,11 +61,11 @@ export default function NewsletterSignup() {
         </g>
       </svg>
 
-      <div className="font-display z-10 w-full max-w-2xl text-left space-y-6">
-        <h2 className="font-display text-4xl md:text-5xl font-medium text-[#003f15]">
+      <div className="font-display z-10 w-full max-w-2xl space-y-6 text-left">
+        <h2 className="font-display text-4xl font-medium text-[#003f15] md:text-5xl">
           Your Inbox, But Tastier
         </h2>
-        <h2 className="text-4xl md:text-5xl font-medium text-[#f9f6e5]">
+        <h2 className="text-4xl font-medium text-[#f9f6e5] md:text-5xl">
           Join the Newsletter
         </h2>
 
@@ -72,13 +73,13 @@ export default function NewsletterSignup() {
           <Input
             type="email"
             placeholder="Email Address"
-            className="w-full h-[58px] rounded-md bg-white border-2 border-[#003f15] px-4"
+            className="h-[58px] w-full rounded-md border-2 border-[#003f15] bg-white px-4"
           />
-          <Button className="h-[58px] font-sans flex justify-center items-center rounded-lg bg-[#003f15] text-[#f9f7f4] font-medium">
+          <Button className="flex h-[58px] items-center justify-center rounded-lg bg-[#003f15] font-sans font-medium text-[#f9f7f4]">
             Subscribe Now
           </Button>
         </div>
       </div>
     </div>
-  );
+  )
 }
