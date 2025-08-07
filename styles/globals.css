@@ -76,7 +76,7 @@
   --border: oklch(0.922 0 0);
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
-  --chart-1: var(--color-blue-300);
+  --chart-1: oklch(0.7152 0.0833 251.22);
   --chart-2: var(--color-blue-500);
   --chart-3: var(--color-blue-600);
   --chart-4: var(--color-blue-700);
@@ -187,6 +187,27 @@
     to {
       transform: translateY(calc(-100% - var(--gap)));
     }
+  }
+}
+
+@layer utilities {
+  .pinstripes {
+    background-image: repeating-linear-gradient(
+      to right,
+      var(--color-chart-1),
+      var(--color-chart-1) 8px,
+      var(--color-primary) 8px,
+      var(--color-primary) 16px
+    );
+  }
+  .pinstripes-lg {
+    background-image: repeating-linear-gradient(
+      to right,
+      var(--color-chart-1),
+      var(--color-chart-1) 14px,
+      var(--color-primary) 14px,
+      var(--color-primary) 16px
+    );
   }
 }
 

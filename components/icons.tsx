@@ -68,4 +68,96 @@ export const Icons = {
       />
     </svg>
   ),
+  "chevron-left": (props: IconProps) => (
+    <svg
+      width={12}
+      height={29}
+      viewBox="0 0 12 29"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="none"
+    >
+      <path
+        d="M10 27L2 15L10 2"
+        stroke="#F9F7F4"
+        stroke-width={3}
+        stroke-linecap="round"
+      />
+    </svg>
+  ),
 }
+
+const items = [
+  {
+    imgSrc: "/home-1.png",
+    display: "Now Serving Fresh Flavor in Logan Square",
+    button: {
+      display: "Find Your FARE",
+      href: "#",
+      className: "bg-[#3faf54] text-[#003f15]",
+    },
+  },
+  {
+    imgSrc: "/home-2.png",
+    display: "Built to Fuel, Styled to Crave",
+    button: {
+      display: "Try the Smoky Chicken Bowl",
+      href: "#",
+      className: "bg-[#003f15] text-[#f9f6e5]",
+    },
+  },
+  {
+    imgSrc: "/home-3.png",
+    display: "What's in Season is What's on Our Plate",
+    button: {
+      display: "See What's New",
+      href: "#",
+      className: "bg-[#3faf54] text-[#003f15]",
+    },
+  },
+  {
+    imgSrc: "/home-4.png",
+    display: "Where Good Food Meets Good Energy.",
+    button: {
+      display: "Get To Know Us",
+      href: "#",
+      className: "bg-[#f9f6e5] text-[#66290a]",
+    },
+  },
+  {
+    imgSrc: "/home-5.png",
+    display: "Sip Something Seasonal",
+    button: {
+      display: "Order Now",
+      href: "#",
+      className: "bg-[#f9f6e5] text-[#66290a]",
+    },
+  },
+  {
+    imgSrc: "/home-6.png",
+    display: "Feed the Team, Win the Day",
+    button: {
+      display: "See Our Catering Menu",
+      href: "#",
+      className: "bg-[#3faf54] text-[#003f15]",
+    },
+  },
+  {
+    imgSrc: "/home-7.png",
+    display: "Your New A.M. Ritual",
+    button: {
+      display: "Order Breakfast",
+      href: "#",
+      className: "bg-[#e6d262] text-[#66290a]",
+    },
+  },
+  {
+    imgSrc: "/home-8.png",
+    display: "Good Food, Good People, Great Energy.",
+    button: {
+      display: "View Open Roles",
+      href: "#",
+      className: "bg-[#cdeaf9] text-[#003f15]",
+    },
+  },
+]
