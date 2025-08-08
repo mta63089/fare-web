@@ -10,6 +10,8 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel"
 
+import { Icons } from "./icons"
+
 interface StarItem {
   imgSrc: string
   name: string
@@ -51,49 +53,36 @@ export default function SeasonalAllStars() {
 
   return (
     <section className="w-full overflow-hidden bg-[#F9F4E0]">
-      <div className="relative mx-auto max-w-7xl px-4 py-12 md:py-16">
-        <h2 className="text-2xl font-semibold text-[#004015] sm:text-3xl md:text-5xl">
-          Meet Our Seasonal Menu All Stars
-        </h2>
-        <div className="absolute top-8 right-4 flex h-16 w-16 items-center justify-center rounded-full bg-[#D13C30] text-center text-xs font-semibold text-white md:h-20 md:w-20 md:text-sm">
-          Summer
-          <br />
-          2025
-        </div>
-        {/* Desktop layout */}
-        <div className="mt-10 hidden w-full items-end justify-between gap-6 md:flex">
-          {allStars.map((item) => (
-            <div key={item.name} className="flex flex-col items-center">
-              <div className="relative flex h-40 w-40 items-end md:h-48 md:w-48">
-                <Image
-                  src={item.imgSrc}
-                  alt={item.name}
-                  fill
-                  sizes="(min-width: 768px) 12rem, 100vw"
-                  className="object-contain"
-                />
-              </div>
-              <h3 className="mt-4 text-base font-medium text-[#004015] md:text-lg">
-                {item.name}
-              </h3>
-              <p className="text-xs text-[#555] md:text-sm">{item.farm}</p>
+      <div className="py-12 lg:py-16">
+        {/* Heading and season badge */}
+        <div className="mx-auto flex w-full max-w-7xl items-center justify-start gap-4 px-4 lg:gap-0">
+          <h2 className="font-display text-2xl font-semibold text-[#004015] lg:text-5xl">
+            Meet Our Seasonal Menu All Stars
+          </h2>
+          <div className="relative ml-0 flex-shrink-0 lg:ml-auto">
+            <div className="relative size-24 lg:size-32">
+              <Icons.apple className="h-full w-full text-[#D13C30]" />
+              <span className="absolute inset-0 flex place-content-center items-center font-semibold text-[#004015]">
+                <span className="text-center leading-snug">
+                  <br />
+                  Summer
+                  <br />
+                  2025
+                </span>
+              </span>
             </div>
-          ))}
+          </div>
         </div>
-        {/* Mobile carousel */}
-        <div className="mt-8 md:hidden">
-          <Carousel
-            plugins={[autoplayRef.current]}
-            opts={{ loop: true }}
-            onMouseEnter={autoplayRef.current.stop}
-            onMouseLeave={autoplayRef.current.reset}
-            className="w-full"
-          >
+        <div className="mt-8">
+          <Carousel opts={{ loop: true }} className="w-full">
             <CarouselContent>
               {allStars.map((item) => (
-                <CarouselItem key={item.name} className="basis-[80%] pl-4">
+                <CarouselItem
+                  key={item.name}
+                  className="basis-1/2 lg:basis-1/4"
+                >
                   <div className="flex flex-col items-center">
-                    <div className="relative flex h-56 w-full items-end">
+                    <div className="relative flex h-64 w-full items-end">
                       <Image
                         src={item.imgSrc}
                         alt={item.name}
@@ -102,10 +91,12 @@ export default function SeasonalAllStars() {
                         className="object-contain"
                       />
                     </div>
-                    <h3 className="mt-4 text-lg font-medium text-[#004015]">
+                    <h3 className="mt-4 text-lg font-medium text-[#004015] lg:text-xl">
                       {item.name}
                     </h3>
-                    <p className="text-sm text-[#555]">{item.farm}</p>
+                    <p className="text-sm text-[#555] lg:text-base">
+                      {item.farm}
+                    </p>
                   </div>
                 </CarouselItem>
               ))}
