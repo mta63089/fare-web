@@ -1,7 +1,9 @@
 import { Marquee } from "@/components/ui/marquee"
 import HomeCarousel from "@/components/home-carousel"
 import { Icons } from "@/components/icons"
+import LocationsPreview from "@/components/locations-preview"
 import MarqueeItem from "@/components/marquee-item"
+import MenuPreview from "@/components/menu-preview"
 import NewsletterSignup from "@/components/newsletter-signup"
 import SeasonalAllStars from "@/components/seasonal-all-stars"
 
@@ -31,6 +33,9 @@ export default function Home() {
         />
       </Marquee>
       <SeasonalAllStars />
+      <MenuPreview />
+      <LocationsPreview />
+      <div className="pinstripes-primary h-8 w-full" />
       <NewsletterSignup />
     </div>
   )
