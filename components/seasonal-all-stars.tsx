@@ -56,10 +56,12 @@ export default function SeasonalAllStars() {
       <div className="py-12 lg:py-16">
         {/* Heading and season badge */}
         <div className="mx-auto flex w-full max-w-7xl items-center justify-start gap-4 px-4 lg:gap-0">
-          <h2 className="font-display text-2xl font-semibold text-[#004015] lg:text-5xl">
-            Meet Our Seasonal Menu All Stars
+          <h2 className="font-display text-4xl font-semibold text-[#004015] lg:text-5xl">
+            Meet Our Seasonal
+            <br />
+            Menu All Stars
           </h2>
-          <div className="relative ml-0 flex-shrink-0 lg:ml-auto">
+          <div className="relative ml-auto flex-shrink-0">
             <div className="relative size-24 lg:size-32">
               <Icons.apple className="h-full w-full text-[#D13C30]" />
               <span className="absolute inset-0 flex place-content-center items-center font-semibold text-[#004015]">

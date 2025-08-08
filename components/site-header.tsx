@@ -72,7 +72,7 @@ export default function Header1() {
         boxShadow: isScrolled ? "0 8px 32px rgba(0, 0, 0, 0.1)" : "none",
       }}
     >
-      <div className="pinstripes h-8 w-full"></div>
+      <div className="pinstripes h-8 w-full" />
       <div className="mx-auto">
         <div className="flex h-16 items-center justify-between lg:h-20">
           <motion.button
