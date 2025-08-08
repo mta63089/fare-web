@@ -1,4 +1,6 @@
+import { homeCta } from "@/lib/cta"
 import { Marquee } from "@/components/ui/marquee"
+import CallToAction from "@/components/call-to-action"
 import HomeCarousel from "@/components/home-carousel"
 import { Icons } from "@/components/icons"
 import LocationsPreview from "@/components/locations-preview"
@@ -36,6 +38,9 @@ export default function Home() {
       <MenuPreview />
       <LocationsPreview />
       <div className="pinstripes-primary h-8 w-full" />
+      <CallToAction {...homeCta[0]} />
+      <CallToAction {...homeCta[1]} />
+      <div className="pinstripes-secondary h-8 w-full" />
       <NewsletterSignup />
     </div>
   )

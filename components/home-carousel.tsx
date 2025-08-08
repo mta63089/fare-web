@@ -1,16 +1,5 @@
 "use client"
 
-/*
- * A responsive hero carousel built with the shadcn/ui Carousel component and
- * Tailwind CSS v4. This implementation maps over an array of slides and
- * automatically cycles through them every 20 seconds. The design
- * intentionally preserves the relative positioning, colours and spacing of
- * the provided mock‑ups while replacing the brittle absolute positioning
- * with modern flexbox utilities. Each slide uses a Next.js `Image` for
- * optimized loading and a semi‑transparent black overlay to ensure text
- * legibility. On mobile the headline scales down and the navigation arrows
- * reposition to suit a narrower viewport.
- */
 import * as React from "react"
 import Image from "next/image"
 import Link from "next/link"
@@ -23,12 +12,6 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel"
 
-/**
- * The data for each slide. The `imgSrc` property points to a local static
- * asset under the `public` directory and the `button` object holds the
- * call‑to‑action label, destination and colour classes. Feel free to
- * customise these values or load them from an API.
- */
 const items = [
   {
     imgSrc: "/home-1.png",
@@ -104,10 +87,6 @@ const items = [
   },
 ] as const
 
-/**
- * A reusable arrow component that dispatches a carousel scroll action when
- * clicked. It renders an `svg` path similar to the provided mock‑ups.
- */
 function SlideArrow({
   direction,
   onClick,
@@ -115,7 +94,6 @@ function SlideArrow({
   direction: "prev" | "next"
   onClick?: () => void
 }) {
-  // The arrow points left when `direction` is "prev" and right when "next"
   const isNext = direction === "next"
   return (
     <button
@@ -155,18 +133,12 @@ function SlideArrow({
   )
 }
 
-/**
- * The main carousel component. It leverages the Embla autoplay plugin to
- * automatically advance slides every 20 seconds and loops infinitely.
- */
 export default function HomeCarousel() {
-  // Keep a reference to the Embla plugin so we can access its methods later.
   const autoplayPlugin = React.useRef(
     Autoplay({ delay: 20000, stopOnInteraction: false })
   )
   const [api, setApi] = React.useState<CarouselApi>()
 
-  // Handlers for our custom arrows. They invoke the Embla API when available.
   const handlePrev = React.useCallback(() => {
     api?.scrollPrev()
   }, [api])
@@ -187,7 +159,6 @@ export default function HomeCarousel() {
         {items.map((item, index) => (
           <CarouselItem key={index} className="w-full">
             <div className="relative h-[70vh] w-full overflow-hidden md:h-[896px]">
-              {/* Background image */}
               <Image
                 src={item.imgSrc}
                 alt={item.display}
@@ -195,9 +166,7 @@ export default function HomeCarousel() {
                 priority={index === 0}
                 className="object-cover"
               />
-              {/* Overlay to improve legibility */}
               <div className="absolute inset-0 bg-black/30" />
-              {/* Headline and button */}
               <div className="relative z-10 flex h-full w-full flex-col items-center justify-center gap-6 px-4 md:px-0 md:pt-[260px]">
                 <h2 className="font-display max-w-[90%] text-center text-3xl font-medium [text-wrap:balance] text-white sm:text-4xl md:text-6xl lg:text-7xl">
                   {item.display}
@@ -213,7 +182,6 @@ export default function HomeCarousel() {
           </CarouselItem>
         ))}
       </CarouselContent>
-      {/* Custom navigation arrows – hidden on very small screens */}
       <SlideArrow direction="prev" onClick={handlePrev} />
       <SlideArrow direction="next" onClick={handleNext} />
     </Carousel>
