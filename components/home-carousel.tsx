@@ -11,11 +11,11 @@
  * legibility. On mobile the headline scales down and the navigation arrows
  * reposition to suit a narrower viewport.
  */
-
 import * as React from "react"
 import Image from "next/image"
 import Link from "next/link"
 import Autoplay from "embla-carousel-autoplay"
+
 import type { CarouselApi } from "@/components/ui/carousel"
 import {
   Carousel,
@@ -108,7 +108,13 @@ const items = [
  * A reusable arrow component that dispatches a carousel scroll action when
  * clicked. It renders an `svg` path similar to the provided mock‑ups.
  */
-function SlideArrow({ direction, onClick }: { direction: "prev" | "next"; onClick?: () => void }) {
+function SlideArrow({
+  direction,
+  onClick,
+}: {
+  direction: "prev" | "next"
+  onClick?: () => void
+}) {
   // The arrow points left when `direction` is "prev" and right when "next"
   const isNext = direction === "next"
   return (
@@ -116,7 +122,7 @@ function SlideArrow({ direction, onClick }: { direction: "prev" | "next"; onClic
       type="button"
       aria-label={isNext ? "Next slide" : "Previous slide"}
       onClick={onClick}
-      className="absolute inset-y-0 z-20 flex w-[3.5rem] items-center justify-center hover:bg-black/10 transition-colors"
+      className="absolute inset-y-0 z-20 flex w-[3.5rem] items-center justify-center transition-colors hover:bg-black/10"
       style={{ [isNext ? "right" : "left"]: 0 }}
     >
       <svg
@@ -125,12 +131,24 @@ function SlideArrow({ direction, onClick }: { direction: "prev" | "next"; onClic
         viewBox="0 0 24 24"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="h-6 w-6"
+        className="size-8 text-white"
       >
         {isNext ? (
-          <path d="M9 18l6-6-6-6" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+          <path
+            d="M9 18l6-6-6-6"
+            stroke="currentColor"
+            strokeWidth={2}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
         ) : (
-          <path d="M15 18l-6-6 6-6" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
+          <path
+            d="M15 18l-6-6 6-6"
+            stroke="currentColor"
+            strokeWidth={2}
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
         )}
       </svg>
     </button>
@@ -168,7 +186,7 @@ export default function HomeCarousel() {
       <CarouselContent>
         {items.map((item, index) => (
           <CarouselItem key={index} className="w-full">
-            <div className="relative h-[70vh] md:h-[896px] w-full overflow-hidden">
+            <div className="relative h-[70vh] w-full overflow-hidden md:h-[896px]">
               {/* Background image */}
               <Image
                 src={item.imgSrc}
@@ -180,12 +198,8 @@ export default function HomeCarousel() {
               {/* Overlay to improve legibility */}
               <div className="absolute inset-0 bg-black/30" />
               {/* Headline and button */}
-              <div
-                className="relative z-10 flex h-full w-full flex-col items-center justify-center gap-6 px-4 md:px-0 md:pt-[260px]"
-              >
-                <h2
-                  className="max-w-[90%] text-center font-medium text-white [text-wrap:balance] text-3xl sm:text-4xl md:text-6xl lg:text-7xl"
-                >
+              <div className="relative z-10 flex h-full w-full flex-col items-center justify-center gap-6 px-4 md:px-0 md:pt-[260px]">
+                <h2 className="font-display max-w-[90%] text-center text-3xl font-medium [text-wrap:balance] text-white sm:text-4xl md:text-6xl lg:text-7xl">
                   {item.display}
                 </h2>
                 <Link

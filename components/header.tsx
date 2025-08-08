@@ -29,10 +29,17 @@ export default function Header() {
   const { theme } = useTheme()
 
   useEffect(() => {
+    let ticking = false
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20)
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 20)
+          ticking = false
+        })
+        ticking = true
+      }
     }
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
@@ -42,25 +49,22 @@ export default function Header() {
   }
 
   return (
-    <motion.header
-      className="sticky top-0 left-0 z-50 transition-all duration-300"
-      initial={{ y: -100, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      style={{
-        backdropFilter: isScrolled ? "blur(20px)" : "none",
-        backgroundColor: isScrolled
-          ? theme === "dark"
-            ? "rgba(0, 0, 0, 0.8)"
-            : "rgba(255, 255, 255, 0.8)"
-          : "transparent",
-        boxShadow: isScrolled ? "0 8px 32px rgba(0, 0, 0, 0.1)" : "none",
-      }}
-    >
-      {/* Pinstripe bar */}
+    <>
+      <motion.header
+        className={
+          `sticky top-0 left-0 z-50 transition-all duration-300 ` +
+          (isScrolled
+            ? theme === "dark"
+              ? "backdrop-blur-md bg-black/80 shadow-[0_8px_32px_rgba(0,0,0,0.1)]"
+              : "backdrop-blur-md bg-white/80 shadow-[0_8px_32px_rgba(0,0,0,0.1)]"
+            : "bg-transparent backdrop-blur-0 shadow-none")
+        }
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+      >
       <div className="pinstripes h-8 w-full" />
       <div className="mx-auto px-4">
         <div className="flex h-16 items-center justify-between lg:h-20">
-          {/* Mobile hamburger / close button */}
           <motion.button
             className="hover:bg-muted rounded-lg p-2 transition-colors duration-200 lg:hidden"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -72,7 +76,6 @@ export default function Header() {
               <Menu className="h-6 w-6" />
             )}
           </motion.button>
-          {/* Desktop navigation */}
           <nav className="hidden items-center space-x-8 lg:flex">
             {navItems.map((item) => (
               <div key={item.name} className="relative">
@@ -84,13 +87,11 @@ export default function Header() {
                   {item.hasDropdown && (
                     <ChevronDown className="h-4 w-4 transition-transform duration-200" />
                   )}
-                  {/* Underline animation on hover */}
                   <span className="absolute bottom-0 left-0 h-0.5 w-0 bg-yellow-400 transition-all duration-300 group-hover:w-full" />
                 </Link>
               </div>
             ))}
           </nav>
-          {/* Logo centred on desktop; on mobile sits to the right of the hamburger */}
           <motion.div
             className="flex space-x-2"
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
@@ -99,7 +100,6 @@ export default function Header() {
               <Icons.logo />
             </Link>
           </motion.div>
-          {/* Right‑hand actions */}
           <div className="flex items-center space-x-4">
             <Link
               href="#"
@@ -118,24 +118,24 @@ export default function Header() {
           </div>
         </div>
       </div>
-      {/* Full‑screen mobile menu */}
+      </motion.header>
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
             key="mobile-menu"
-            className="fixed inset-0 z-40 flex flex-col bg-[#003F15] text-white"
+            className="fixed inset-0 z-50 h-screen w-screen flex flex-col overflow-y-auto bg-[#003F15] text-white"
             variants={mobileMenuVariants}
             initial="closed"
             animate="open"
             exit="closed"
-            transition={{ type: "spring", stiffness: 300, damping: 40 }}
+            transition={{ type: "spring", stiffness: 250, damping: 30 }}
           >
-            {/* Top bar inside the mobile overlay */}
             <div className="flex h-16 items-center justify-between px-4">
               <button
                 type="button"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="p-2"
+                aria-label="Close menu"
               >
                 <X className="h-6 w-6" />
               </button>
@@ -158,7 +158,6 @@ export default function Header() {
                   className="group relative text-3xl font-medium"
                 >
                   <span>{item.name}</span>
-                  {/* Animated underline on hover */}
                   <span className="absolute bottom-0 left-0 h-1 w-0 bg-yellow-400 transition-all duration-300 group-hover:w-full" />
                 </Link>
               ))}
@@ -174,6 +173,6 @@ export default function Header() {
           </motion.div>
         )}
       </AnimatePresence>
-    </motion.header>
+    </>
   )
 }

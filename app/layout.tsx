@@ -10,8 +10,8 @@ const fontSans = Work_Sans({
   variable: "--font-sans",
   subsets: ["latin"],
 })
-
-export const fontDisplay = localFont({
+//  TODO convert this to loading via json for speed https://github.com/shadcn-ui/ui/tree/main/apps/v4/app/og/route.tsx
+const fontDisplay = localFont({
   src: [
     {
       path: "./CLAYO.otf",

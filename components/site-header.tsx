@@ -29,7 +29,6 @@ const navItems: NavItem[] = [
 export default function Header1() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const { theme } = useTheme()
 
   useEffect(() => {
@@ -89,14 +88,7 @@ export default function Header1() {
           </motion.button>
           <nav className="hidden items-center space-x-8 lg:flex">
             {navItems.map((item) => (
-              <div
-                key={item.name}
-                className="relative"
-                onMouseEnter={() =>
-                  item.hasDropdown && setActiveDropdown(item.name)
-                }
-                onMouseLeave={() => setActiveDropdown(null)}
-              >
+              <div key={item.name} className="relative">
                 <Link
                   href={item.href}
                   className="text-foreground flex items-center space-x-1 font-medium transition-colors duration-200 hover:text-rose-500"

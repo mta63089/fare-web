@@ -3,6 +3,7 @@ import HomeCarousel from "@/components/home-carousel"
 import { Icons } from "@/components/icons"
 import MarqueeItem from "@/components/marquee-item"
 import NewsletterSignup from "@/components/newsletter-signup"
+import SeasonalAllStars from "@/components/seasonal-all-stars"
 
 export default function Home() {
   return (
@@ -23,7 +24,13 @@ export default function Home() {
           href="#"
           text="5 NEW LOCATIONS COMING SOON"
         />
+        <MarqueeItem
+          icon={<Icons.blueBanana className="size-6" />}
+          href="#"
+          text="SEE MORE INFO"
+        />
       </Marquee>
+      <SeasonalAllStars />
       <NewsletterSignup />
     </div>
   )

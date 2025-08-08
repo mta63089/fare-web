@@ -77,8 +77,8 @@
   --input: oklch(0.922 0 0);
   --ring: oklch(0.708 0 0);
   --chart-1: oklch(0.7152 0.0833 251.22);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
+  --chart-2: oklch(0.8586 0.1339 99.3);
+  --chart-3: oklch(0.5639 0.1655 35.58);
   --chart-4: var(--color-blue-700);
   --chart-5: var(--color-blue-800);
   --sidebar: oklch(0.985 0 0);
@@ -200,13 +200,13 @@
       var(--color-primary) 16px
     );
   }
-  .pinstripes-lg {
+  .pinstripes-secondary {
     background-image: repeating-linear-gradient(
       to right,
-      var(--color-chart-1),
-      var(--color-chart-1) 14px,
-      var(--color-primary) 14px,
-      var(--color-primary) 16px
+      var(--color-chart-2),
+      var(--color-chart-2) 8px,
+      var(--color-chart-3) 8px,
+      var(--color-chart-3) 16px
     );
   }
 }
