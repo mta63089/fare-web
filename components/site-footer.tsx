@@ -69,12 +69,14 @@ export default function SiteFooter() {
             </li>
           </ul>
 
-          <h3 className="mt-6 mb-4 text-lg font-medium">Social</h3>
+          <h3 className="mt-6 pb-4">Social</h3>
           <div className="flex space-x-4">
-            <Link href="#" className="h-3 w-3 rounded-sm bg-[#f9f6e5]" />
-            <Link href="#" className="h-3 w-3 rounded-sm bg-[#f9f6e5]" />
-            <Link href="#" className="h-3 w-3 rounded-sm bg-[#f9f6e5]" />
-            <Link href="#" className="h-3 w-3 rounded-sm bg-[#f9f6e5]" />
+            <a href="https://www.instagram.com/foodbyfare" target="_blank">
+              <Icons.instagram className="size-6" />
+            </a>
+            <a target="_blank" href="https://www.facebook.com/foodbyfare">
+              <Icons.facebook className="size-6" />
+            </a>
           </div>
         </div>
       </div>
