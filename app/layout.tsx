@@ -57,11 +57,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${fontSans.variable} ${geistMono.variable} ${fontDisplay.variable} group/body text-foreground min-h-svh overscroll-none font-sans antialiased`}
       >
-        <ThemeProvider>
+        <ThemeProvider defaultTheme="light">
           <div className="flex flex-1 flex-col">{children}</div>
         </ThemeProvider>
       </body>

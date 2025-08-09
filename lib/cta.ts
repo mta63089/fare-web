@@ -22,4 +22,16 @@ export const homeCta: CallToActionProps[] = [
     buttonContent: "View Catering Menu",
     align: "left",
   },
+  {
+    className: "bg-[#f2e7ca] text-primary",
+    imageSrc: "/home-cta-3.png",
+    header: "Good Taste Pays Off",
+    content:
+      "Say hello to the FARE app — your new shortcut to points, perks, and free meals. Order ahead, skip the line, and get rewarded just for doing your thing.",
+    src: "#",
+    buttonContent: "Download the App",
+    buttonCn:
+      "bg-primary-foreground text-primary hover:bg-primary-foreground/50",
+    align: "left",
+  },
 ]
