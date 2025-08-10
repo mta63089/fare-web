@@ -7,7 +7,6 @@ import { Icons } from "@/components/icons"
 import LocationsPreview from "@/components/locations-preview"
 import MarqueeItem from "@/components/marquee-item"
 import MenuPreview from "@/components/menu-preview"
-import NewsletterSignup from "@/components/newsletter-signup"
 import SeasonalAllStars from "@/components/seasonal-all-stars"
 
 export default function Home() {
@@ -43,8 +42,6 @@ export default function Home() {
       <CallToAction {...homeCta[1]} />
       <FlavorCarousel />
       <CallToAction {...homeCta[2]} />
-      <div className="pinstripes-secondary h-8 w-full" />
-      <NewsletterSignup />
     </div>
   )
 }

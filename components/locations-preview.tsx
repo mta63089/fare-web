@@ -45,7 +45,7 @@ export default function LocationsPreview({
       className="text-primary-foreground bg-primary w-full py-16"
       {...props}
     >
-      <div className="mx-auto max-w-7xl px-4 lg:px-8">
+      <div className="max-w-7xl px-12">
         <h2 className="font-display text-3xl font-semibold lg:text-4xl">
           Our Locations
         </h2>
@@ -58,15 +58,15 @@ export default function LocationsPreview({
           </Button>
         </Link>
       </div>
-      <div className="mt-8 w-full">
-        <Carousel opts={{ loop: true }} className="w-full">
+      <div className="mx-auto mt-8 max-w-7xl">
+        <Carousel opts={{ loop: true }} className="">
           <CarouselContent>
             {items.map((item) => (
               <CarouselItem
                 key={item.display}
                 className="basis-full lg:basis-1/3"
               >
-                <div className="flex h-full flex-col px-4 lg:px-6">
+                <div className="flex h-full flex-col px-8 pl-0">
                   <div className="relative h-80 w-full overflow-hidden rounded-2xl lg:h-96">
                     <Image
                       src={item.imageSrc}

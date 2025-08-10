@@ -6,6 +6,7 @@ import Autoplay from "embla-carousel-autoplay"
 
 import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel"
 
+// TODO Update to use instagram api to pull most recent X posts
 export default function FlavorCarousel() {
   const images = [
     "/flavor-carousel-1.jpg",
