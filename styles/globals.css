@@ -58,9 +58,9 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(0.9768 0.0045 78.3);
+  --background: oklch(0.9695 0.0067 97.35);
   --foreground: oklch(0.145 0 0);
-  --card: oklch(0.9768 0.0045 78.3);
+  --card: oklch(0.9695 0.0067 97.35);
   --card-foreground: oklch(0.145 0 0);
   --popover: oklch(0.9768 0.0045 78.3);
   --popover-foreground: oklch(0.145 0 0);

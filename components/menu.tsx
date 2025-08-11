@@ -56,7 +56,7 @@ export default function Menu() {
   return (
     <div className="w-full">
       {/* Sticky category nav bar */}
-      <nav className="sticky top-[4rem] z-40 w-full border-b border-[#EDEAE0] bg-[#F9F6E5]">
+      <nav className="sticky top-[7rem] z-40 w-full border-b border-[#EDEAE0] bg-[#F9F6E5]">
         <ul
           ref={navRef}
           className="mx-auto flex max-w-7xl overflow-x-auto px-4 py-3 text-sm font-medium whitespace-nowrap lg:justify-center lg:space-x-8 lg:text-base"

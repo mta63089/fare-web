@@ -3,7 +3,7 @@ import Menu from "@/components/menu"
 
 export default function MenuPage() {
   return (
-    <div>
+    <div className="bg-background">
       <HeroBanner
         imageSrc="/menu/hero.jpg"
         heading="Real Food, Ready When You Are"
