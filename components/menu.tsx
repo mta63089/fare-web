@@ -4,7 +4,10 @@ import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 
+import { menuCta } from "@/lib/cta"
 import { categories } from "@/lib/menu"
+
+import CallToAction from "./call-to-action"
 
 interface MenuItem {
   name: string
@@ -55,18 +58,17 @@ export default function Menu() {
 
   return (
     <div className="w-full">
-      {/* Sticky category nav bar */}
-      <nav className="sticky top-[7rem] z-40 w-full border-b border-[#EDEAE0] bg-[#F9F6E5]">
+      <nav className="sticky top-[7rem] z-40 w-full border-b border-[#EDEAE0] bg-[#F9F6E5] py-4">
         <ul
           ref={navRef}
-          className="mx-auto flex max-w-7xl overflow-x-auto px-4 py-3 text-sm font-medium whitespace-nowrap lg:justify-center lg:space-x-8 lg:text-base"
+          className="mx-auto flex max-w-7xl overflow-x-auto px-4 py-3 text-sm font-medium lg:justify-center lg:space-x-8 lg:text-base"
         >
           {categories.map((cat) => {
             const isActive = activeId === cat.id
             return (
               <li
                 key={cat.id}
-                className="relative mx-2 cursor-pointer px-1 py-1 lg:mx-4"
+                className="relative mx-2 cursor-pointer px-1 lg:mx-4"
                 onClick={handleNavClick(cat.id)}
               >
                 <span
@@ -95,7 +97,8 @@ export default function Menu() {
       <div className="mx-auto mt-8 max-w-7xl space-y-20 px-4">
         {categories.map((cat) => (
           <section key={cat.id} id={cat.id} className="scroll-mt-28">
-            <h2 className="font-display mb-6 text-2xl font-semibold text-[#004015] lg:text-4xl">
+            {cat.id == "veggie-sides" && <CallToAction {...menuCta[0]} />}
+            <h2 className="font-display text-primary mb-6 text-2xl lg:text-5xl">
               {cat.label}
             </h2>
             <div className="grid grid-cols-1 gap-x-8 gap-y-12 lg:grid-cols-3">
@@ -109,16 +112,14 @@ export default function Menu() {
                       sizes="100vw"
                       className="object-cover"
                     />
-                    <div className="absolute top-3 right-3 flex space-x-1">
+                    <div className="text-primary absolute top-3 right-3 flex space-x-2 font-semibold">
                       {item.isGlutenFree && (
-                        <span className="rounded-full bg-[#0f56b3] px-2 py-1 text-xs font-bold text-white">
+                        <span className="rounded-full bg-[#7CA7D6] p-2">
                           GF
                         </span>
                       )}
                       {item.isVegan && (
-                        <span className="rounded-full bg-[#00994c] px-2 py-1 text-xs font-bold text-white">
-                          V
-                        </span>
+                        <span className="rounded-full bg-[#3FAF54] p-2">V</span>
                       )}
                     </div>
                   </div>

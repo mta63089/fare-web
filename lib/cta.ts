@@ -34,16 +34,19 @@ export const homeCta: CallToActionProps[] = [
       "bg-primary-foreground text-primary hover:bg-primary-foreground/50",
     align: "left",
   },
+]
+
+export const menuCta: CallToActionProps[] = [
   {
     className: "bg-[#f2e7ca] text-primary",
-    imageSrc: "/menu/cta-1.png",
-    header: "Good Taste Pays Off",
+    imageSrc: "/cta-1.png",
+    header:
+      "Crave-Worthy Catering That Keeps Everyone Happy for Office Lunches, Dinner Parties, and Everything in Between",
     content:
-      "Say hello to the FARE app — your new shortcut to points, perks, and free meals. Order ahead, skip the line, and get rewarded just for doing your thing.",
-    src: "#",
-    buttonContent: "Download the App",
-    buttonCn:
-      "bg-primary-foreground text-primary hover:bg-primary-foreground/50",
-    align: "left",
+      "Feeding a group? We make it easy. Pick your proteins, sides, seasonal bases–and don’t forget our signature sauces. We'll bring the goods, including feel-good desserts that always get a second look. Perfect for offices, parties, or any moment that deserves better-than-average everything.",
+    src: "/catering",
+    buttonContent: "View Catering Menu",
+    buttonCn: "bg-primary text-primary-foreground hover:bg-primary/50",
+    align: "right",
   },
 ]
