@@ -1,4 +1,5 @@
 import HeroBanner from "@/components/hero-banner"
+import Menu from "@/components/menu"
 
 export default function MenuPage() {
   return (
@@ -12,6 +13,7 @@ export default function MenuPage() {
           className: "bg-chart-4 text-primary-foreground hover:bg-chart-4/80",
         }}
       />
+      <Menu />
     </div>
   )
 }
