@@ -88,27 +88,6 @@ export const categories: MenuCategory[] = [
     ],
   },
   {
-    id: "craft-your-own",
-    label: "Craft Your Own",
-    items: [
-      {
-        name: "Craft Your Own Bowl",
-        description:
-          "Pick a base, two seasonal toppers, a protein and finish it off with one of our signature sauces",
-        imageSrc: "/menu/craft-your-own-bowl.jpg",
-        price: 11.0,
-      },
-      {
-        name: "Craft Your Own Plate",
-        description:
-          "Pick three of our delicious sides, a protein and finish it off with one of our signature sauces. All plates come with a mini cornbread muffin",
-        imageSrc: "/menu/craft-your-own-plate.jpg",
-        price: 13.0,
-      },
-    ],
-  },
-
-  {
     id: "smoothies",
     label: "Smoothies",
     items: [
@@ -164,101 +143,101 @@ export const categories: MenuCategory[] = [
       },
     ],
   },
-  {
-    id: "veggie-sides",
-    label: "Veggie Sides",
-    items: [
-      {
-        name: "Harissa Sweet Potatoes",
-        description:
-          "Oven Roasted Sweet Potato, Housemade Harissa, Maple Syrup",
-        imageSrc: "/menu/harissa-sweet-potatoes.jpg",
-        isVegan: true,
-        isGlutenFree: true,
-        price: 5.0,
-      },
-      {
-        name: "Mac + Cheese",
-        description: "Local Cheddar, Parmigiano Reggiano, Warm Spices",
-        imageSrc: "/menu/mac-and-cheese.jpg",
-        price: 5.0,
-      },
-      {
-        name: "Green Goddess Slaw",
-        description:
-          "Kale, Cabbage, Basil, Parsley, Red Onion, Green Goddess Dressing",
-        imageSrc: "/menu/green-goddess-slaw.jpg",
-        price: 5.0,
-      },
-      {
-        name: "Roasted Carrots Side",
-        description: "Carrots, Olive Oil",
-        imageSrc: "/menu/roasted-carrots-side.jpg",
-        isVegan: true,
-        isGlutenFree: true,
-        price: 5.0,
-      },
-      {
-        name: "Elote Corn Salad",
-        description: "Corn, Red Onion, Jalapeño, Cotija, Lime",
-        imageSrc: "/menu/elote-corn-salad.jpg",
-        price: 5.0,
-      },
-      {
-        name: "Tomatoes + Peaches",
-        description: "Cherry Tomatoes, Peaches, Basil, Honey",
-        imageSrc: "/menu/tomatoes-peaches.jpg",
-        isGlutenFree: true,
-        price: 5.0,
-      },
-      {
-        name: "Sweet & Sour Cucumber Side",
-        description: "Persian Cucumbers, Red Wine Vinegar, Honey, Parsley",
-        imageSrc: "/menu/sweet-sour-cucumber-side.jpg",
-        isGlutenFree: true,
-        price: 5.0,
-      },
-    ],
-  },
-  {
-    id: "protein-sides",
-    label: "Protein Sides",
-    items: [
-      {
-        name: "Smoky Chicken",
-        description: "Chicken Thighs, Housemade Smoky Spice Blend",
-        imageSrc: "/menu/smoky-chicken.jpg",
-        price: 3.99,
-      },
-      {
-        name: "Basil Turkey Meatballs",
-        description: "Local Ground Turkey, Basil, Ricotta, Olive Oil",
-        imageSrc: "/menu/basil-turkey-meatballs.jpg",
-        price: 3.49,
-      },
-      {
-        name: "Roasted Salmon",
-        description: "Sustainable Salmon, Olive Oil",
-        imageSrc: "/menu/roasted-salmon.jpg",
-        price: 7.49,
-      },
-      {
-        name: "Avocado Mash",
-        description: "Avocado, Fresh Lemon",
-        imageSrc: "/menu/avocado-mash.jpg",
-        isVegan: true,
-        isGlutenFree: true,
-        price: 3.49,
-      },
-      {
-        name: "Miso Tofu",
-        description: "Local Phoenix Bean Tofu, Miso Glaze",
-        imageSrc: "/menu/miso-tofu.jpg",
-        isVegan: true,
-        price: 3.99,
-      },
-    ],
-  },
+  // {
+  //   id: "veggie-sides",
+  //   label: "Veggie Sides",
+  //   items: [
+  //     {
+  //       name: "Harissa Sweet Potatoes",
+  //       description:
+  //         "Oven Roasted Sweet Potato, Housemade Harissa, Maple Syrup",
+  //       imageSrc: "/menu/harissa-sweet-potatoes.jpg",
+  //       isVegan: true,
+  //       isGlutenFree: true,
+  //       price: 5.0,
+  //     },
+  //     {
+  //       name: "Mac + Cheese",
+  //       description: "Local Cheddar, Parmigiano Reggiano, Warm Spices",
+  //       imageSrc: "/menu/mac-and-cheese.jpg",
+  //       price: 5.0,
+  //     },
+  //     {
+  //       name: "Green Goddess Slaw",
+  //       description:
+  //         "Kale, Cabbage, Basil, Parsley, Red Onion, Green Goddess Dressing",
+  //       imageSrc: "/menu/green-goddess-slaw.jpg",
+  //       price: 5.0,
+  //     },
+  //     {
+  //       name: "Roasted Carrots Side",
+  //       description: "Carrots, Olive Oil",
+  //       imageSrc: "/menu/roasted-carrots-side.jpg",
+  //       isVegan: true,
+  //       isGlutenFree: true,
+  //       price: 5.0,
+  //     },
+  //     {
+  //       name: "Elote Corn Salad",
+  //       description: "Corn, Red Onion, Jalapeño, Cotija, Lime",
+  //       imageSrc: "/menu/elote-corn-salad.jpg",
+  //       price: 5.0,
+  //     },
+  //     {
+  //       name: "Tomatoes + Peaches",
+  //       description: "Cherry Tomatoes, Peaches, Basil, Honey",
+  //       imageSrc: "/menu/tomatoes-peaches.jpg",
+  //       isGlutenFree: true,
+  //       price: 5.0,
+  //     },
+  //     {
+  //       name: "Sweet & Sour Cucumber Side",
+  //       description: "Persian Cucumbers, Red Wine Vinegar, Honey, Parsley",
+  //       imageSrc: "/menu/sweet-sour-cucumber-side.jpg",
+  //       isGlutenFree: true,
+  //       price: 5.0,
+  //     },
+  //   ],
+  // },
+  // {
+  //   id: "protein-sides",
+  //   label: "Protein Sides",
+  //   items: [
+  //     {
+  //       name: "Smoky Chicken",
+  //       description: "Chicken Thighs, Housemade Smoky Spice Blend",
+  //       imageSrc: "/menu/smoky-chicken.jpg",
+  //       price: 3.99,
+  //     },
+  //     {
+  //       name: "Basil Turkey Meatballs",
+  //       description: "Local Ground Turkey, Basil, Ricotta, Olive Oil",
+  //       imageSrc: "/menu/basil-turkey-meatballs.jpg",
+  //       price: 3.49,
+  //     },
+  //     {
+  //       name: "Roasted Salmon",
+  //       description: "Sustainable Salmon, Olive Oil",
+  //       imageSrc: "/menu/roasted-salmon.jpg",
+  //       price: 7.49,
+  //     },
+  //     {
+  //       name: "Avocado Mash",
+  //       description: "Avocado, Fresh Lemon",
+  //       imageSrc: "/menu/avocado-mash.jpg",
+  //       isVegan: true,
+  //       isGlutenFree: true,
+  //       price: 3.49,
+  //     },
+  //     {
+  //       name: "Miso Tofu",
+  //       description: "Local Phoenix Bean Tofu, Miso Glaze",
+  //       imageSrc: "/menu/miso-tofu.jpg",
+  //       isVegan: true,
+  //       price: 3.99,
+  //     },
+  //   ],
+  // },
   {
     id: "beverages",
     label: "Beverages",
@@ -290,7 +269,7 @@ export const categories: MenuCategory[] = [
       {
         name: "FARE x RMRR Limeade Kombucha",
         description: "",
-        imageSrc: "/menu/fare-limeade-kombucha.jpg",
+        imageSrc: "/menu/placeholder.png",
         isVegan: true,
         isGlutenFree: true,
         price: 4.99,

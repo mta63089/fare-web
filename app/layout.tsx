@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Geist_Mono, Work_Sans } from "next/font/google"
 import localFont from "next/font/local"
+import { GoogleAnalytics } from "@next/third-parties/google"
 
 import { ThemeProvider } from "@/components/theme-provider"
 
@@ -62,9 +63,10 @@ export default function RootLayout({
         className={`${fontSans.variable} ${geistMono.variable} ${fontDisplay.variable} group/body text-foreground min-h-svh overscroll-none font-sans antialiased`}
       >
         <ThemeProvider defaultTheme="light">
-          <div className="flex flex-1 flex-col">{children}</div>
+          <div className="z-10 flex flex-1 flex-col">{children}</div>
         </ThemeProvider>
       </body>
+      <GoogleAnalytics gaId={process.env.GA_ID!} />
     </html>
   )
 }

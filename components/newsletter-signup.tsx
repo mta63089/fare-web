@@ -4,16 +4,15 @@ import { Button } from "./ui/button"
 
 export default function NewsletterSignup() {
   return (
-    <div className="relative flex w-full flex-col items-start overflow-hidden bg-[#3faf54] px-4 py-20 md:px-16">
+    <div className="bg-chart-4 relative flex w-full flex-col items-start overflow-hidden px-4 py-20 md:px-16 md:py-24">
       <svg
-        width={1440}
-        height={442}
         viewBox="0 0 1440 442"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        className="absolute top-0 left-0 h-full w-full object-cover"
-        preserveAspectRatio="none"
+        className="pointer-events-none absolute inset-y-0 right-0 h-full w-auto max-w-none"
+        preserveAspectRatio="xMaxYMid slice"
       >
+        {/* mask and paths unchanged */}
         <mask
           id="mask0_148_554"
           style={{ maskType: "alpha" }}
@@ -62,13 +61,12 @@ export default function NewsletterSignup() {
       </svg>
 
       <div className="font-display z-10 w-full max-w-2xl space-y-6 text-left">
-        <h2 className="font-display text-4xl font-medium text-[#003f15] md:text-5xl">
+        <h2 className="text-4xl font-medium text-[#003f15] md:text-5xl">
           Your Inbox, But Tastier
         </h2>
         <h2 className="text-4xl font-medium text-[#f9f6e5] md:text-5xl">
           Join the Newsletter
         </h2>
-
         <div className="mt-8 space-y-8">
           <Input
             type="email"

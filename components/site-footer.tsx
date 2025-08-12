@@ -4,9 +4,8 @@ import { Icons } from "./icons"
 
 export default function SiteFooter() {
   return (
-    <footer className="bg-[#003f15] py-12 text-[#f9f6e5]">
+    <footer className="text-background bg-primary py-12">
       <div className="container mx-auto grid grid-cols-2 gap-8 px-4 md:grid-cols-4 md:px-8">
-        {/* Our Company */}
         <div>
           <h3 className="mb-4 text-lg font-medium">Our Company</h3>
           <ul className="space-y-2 text-sm">

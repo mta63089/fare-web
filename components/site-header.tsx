@@ -46,7 +46,6 @@ export default function Header1() {
       backdropFilter: "blur(20px)",
       backgroundColor:
         theme === "dark" ? "rgba(0, 0, 0, 0.8)" : "rgba(255, 255, 255, 0.8)",
-      boxShadow: "0 8px 32px rgba(0, 0, 0, 0.1)",
     },
   }
 
@@ -57,7 +56,7 @@ export default function Header1() {
 
   return (
     <motion.header
-      className="sticky top-0 left-0 z-50 transition-all duration-300"
+      className="sticky top-0 left-0 z-20 transition-all duration-300"
       variants={headerVariants}
       initial="initial"
       animate={isScrolled ? "scrolled" : "animate"}
@@ -69,7 +68,6 @@ export default function Header1() {
             ? "rgba(0, 0, 0, 0.8)"
             : "rgba(255, 255, 255, 0.8)"
           : "transparent",
-        boxShadow: isScrolled ? "0 8px 32px rgba(0, 0, 0, 0.1)" : "none",
       }}
     >
       <div className="pinstripes h-8 w-full" />
