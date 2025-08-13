@@ -19,7 +19,7 @@ const items = [
     button: {
       display: "Find Your FARE",
       href: "#",
-      className: "bg-[#3faf54] text-[#003f15]",
+      className: "bg-chart-4 text-primary",
     },
   },
   {
@@ -28,7 +28,7 @@ const items = [
     button: {
       display: "Try the Smoky Chicken Bowl",
       href: "#",
-      className: "bg-[#003f15] text-[#f9f6e5]",
+      className: "bg-primary text-sidebar",
     },
   },
   {
@@ -37,7 +37,7 @@ const items = [
     button: {
       display: "See What's New",
       href: "#",
-      className: "bg-[#3faf54] text-[#003f15]",
+      className: "bg-chart-4 text-primary",
     },
   },
   {
@@ -46,7 +46,7 @@ const items = [
     button: {
       display: "Get To Know Us",
       href: "#",
-      className: "bg-[#f9f6e5] text-[#66290a]",
+      className: "bg-sidebar text-primary",
     },
   },
   {
@@ -55,7 +55,7 @@ const items = [
     button: {
       display: "Order Now",
       href: "#",
-      className: "bg-[#f9f6e5] text-[#66290a]",
+      className: "bg-sidebar text-primary",
     },
   },
   {
@@ -64,7 +64,7 @@ const items = [
     button: {
       display: "See Our Catering Menu",
       href: "#",
-      className: "bg-[#3faf54] text-[#003f15]",
+      className: "bg-chart-4 text-primary",
     },
   },
   {
@@ -73,7 +73,7 @@ const items = [
     button: {
       display: "Order Breakfast",
       href: "#",
-      className: "bg-[#e6d262] text-[#66290a]",
+      className: "bg-chart-2 text-primary",
     },
   },
   {
@@ -82,7 +82,7 @@ const items = [
     button: {
       display: "View Open Roles",
       href: "#",
-      className: "bg-[#cdeaf9] text-[#003f15]",
+      className: "bg-secondary text-primary",
     },
   },
 ] as const

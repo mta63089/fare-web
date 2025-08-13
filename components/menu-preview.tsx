@@ -59,7 +59,7 @@ export default function MenuPreview({
                       className="object-cover"
                     />
                   </div>
-                  <div className="mt-4 text-[#004015] lg:mt-6">
+                  <div className="text-primary mt-4 lg:mt-6">
                     <h3 className="text-lg font-medium lg:text-xl">
                       {item.display}
                     </h3>

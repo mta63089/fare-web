@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Geist_Mono, Work_Sans } from "next/font/google"
 import localFont from "next/font/local"
 import { GoogleAnalytics } from "@next/third-parties/google"
+import { Analytics } from "@vercel/analytics/next"
 
 import { ThemeProvider } from "@/components/theme-provider"
 
@@ -67,6 +68,7 @@ export default function RootLayout({
         </ThemeProvider>
       </body>
       <GoogleAnalytics gaId={process.env.GA_ID!} />
+      <Analytics />
     </html>
   )
 }

@@ -52,7 +52,7 @@ export default function SeasonalAllStars() {
   )
 
   return (
-    <section className="w-full overflow-hidden bg-[#F9F4E0]">
+    <section className="bg-background w-full overflow-hidden">
       <div className="py-12 lg:py-16">
         {/* Heading and season badge */}
         <div className="mx-auto flex w-full max-w-7xl items-center justify-start gap-4 px-4 lg:gap-0">
@@ -93,7 +93,7 @@ export default function SeasonalAllStars() {
                         className="object-contain"
                       />
                     </div>
-                    <h3 className="mt-4 text-lg font-medium text-[#004015] lg:text-xl">
+                    <h3 className="text-primary mt-4 text-lg font-medium lg:text-xl">
                       {item.name}
                     </h3>
                     <p className="text-sm text-[#555] lg:text-base">

@@ -12,7 +12,7 @@ export const homeCta: CallToActionProps[] = [
     align: "right",
   },
   {
-    className: "bg-[#f2e7ca] text-primary",
+    className: "bg-border text-primary",
     imageSrc: "/home-cta-2.png",
     header:
       "Crave-Worthy Catering That Keeps Everyone Happy for Office Lunches, Dinner Parties, and Everything in Between",
@@ -38,7 +38,7 @@ export const homeCta: CallToActionProps[] = [
 
 export const menuCta: CallToActionProps[] = [
   {
-    className: "bg-[#f2e7ca] text-primary",
+    className: "bg-border text-primary",
     imageSrc: "/cta-1.png",
     header:
       "Crave-Worthy Catering That Keeps Everyone Happy for Office Lunches, Dinner Parties, and Everything in Between",
@@ -46,6 +46,21 @@ export const menuCta: CallToActionProps[] = [
       "Feeding a group? We make it easy. Pick your proteins, sides, seasonal bases–and don’t forget our signature sauces. We'll bring the goods, including feel-good desserts that always get a second look. Perfect for offices, parties, or any moment that deserves better-than-average everything.",
     src: "/catering",
     buttonContent: "View Catering Menu",
+    buttonCn: "bg-primary text-primary-foreground hover:bg-primary/50",
+    align: "right",
+  },
+]
+
+export const cateringCta: CallToActionProps[] = [
+  {
+    className: "bg-chart-1 text-primary",
+    imageSrc: "/catering/cta.jpg",
+    header:
+      "Crave-Worthy Catering That Keeps Everyone Happy for Office Lunches, Dinner Parties, and Everything in Between",
+    content:
+      "Place the order, earn the points, soak up the praise. Download the FARE app and get rewarded every time you fuel the crew (or yourself). Catering orders, pickups or solo cravings – it all counts towards free meals and exclusive perks.",
+    src: "#",
+    buttonContent: "Order Through The App",
     buttonCn: "bg-primary text-primary-foreground hover:bg-primary/50",
     align: "right",
   },

@@ -1,10 +1,29 @@
+"use client"
+
+import { useRef } from "react"
+import { motion, useInView } from "framer-motion"
+
 import { Input } from "@/components/ui/input"
 
 import { Button } from "./ui/button"
 
+/**
+ * NewsletterSignup
+ *
+ * Collects an email address for newsletter sign‑up.  A bold headline
+ * introduces the section, followed by a smaller subtitle.  The form
+ * contains a single text input and a submit button.  The background
+ * colour and decorative shapes can be customised via Tailwind classes
+ * or by editing the underlying markup.
+ */
 export default function NewsletterSignup() {
+  const ref = useRef<HTMLDivElement | null>(null)
+  const inView = useInView(ref, { once: true, margin: "-100px" })
   return (
-    <div className="bg-chart-4 relative flex w-full flex-col items-start overflow-hidden px-4 py-20 md:px-16 md:py-24">
+    <section
+      ref={ref}
+      className="bg-chart-4 relative overflow-hidden py-16 md:py-24"
+    >
       <svg
         viewBox="0 0 1440 442"
         fill="none"
@@ -59,25 +78,40 @@ export default function NewsletterSignup() {
           />
         </g>
       </svg>
-
-      <div className="font-display z-10 w-full max-w-2xl space-y-6 text-left">
-        <h2 className="text-4xl font-medium text-[#003f15] md:text-5xl">
+      <div className="relative z-10 mx-auto max-w-xl px-4">
+        <motion.h2
+          className="font-display text-primary text-3xl md:text-4xl"
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
           Your Inbox, But Tastier
-        </h2>
-        <h2 className="text-4xl font-medium text-[#f9f6e5] md:text-5xl">
+        </motion.h2>
+        <motion.h3
+          className="font-display text-sidebar text-3xl md:text-4xl"
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }}
+        >
           Join the Newsletter
-        </h2>
-        <div className="mt-8 space-y-8">
+        </motion.h3>
+        <motion.div
+          className="mt-8 space-y-4"
+          initial={{ opacity: 0, y: 30 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
+        >
           <Input
             type="email"
             placeholder="Email Address"
-            className="h-[58px] w-full rounded-md border-2 border-[#003f15] bg-white px-4"
+            className="text-primary bg-background h-14"
           />
-          <Button className="flex h-[58px] items-center justify-center rounded-lg bg-[#003f15] font-sans font-medium text-[#f9f7f4]">
+          <Button className="bg-primary hover:bg-primary/90 text-background h-14 w-full">
             Subscribe Now
           </Button>
-        </div>
+        </motion.div>
       </div>
-    </div>
+      {/* Decorative shapes on the right can be added here as absolutely positioned SVGs or images */}
+    </section>
   )
 }

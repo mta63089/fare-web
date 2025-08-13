@@ -23,15 +23,6 @@ export interface HeroBannerProps extends React.ComponentProps<"section"> {
   }
 }
 
-/**
- * HeroBanner is a reusable top‑of‑page hero component. It displays
- * a full‑bleed background image with overlaid text and an optional
- * call‑to‑action button. The layout adapts for mobile and desktop:
- * on smaller screens the text stays centred on the image, while on
- * larger screens the image and content scale proportionally. You can
- * customise the background image, heading, and button content via
- * props.
- */
 export default function HeroBanner({
   imageSrc,
   heading,
@@ -44,7 +35,6 @@ export default function HeroBanner({
       className={`relative w-full overflow-hidden ${className ?? ""}`}
       {...props}
     >
-      {/* Background image and dark overlay */}
       <div className="relative h-[60vh] w-full md:h-[70vh]">
         <Image
           src={imageSrc}
@@ -54,11 +44,9 @@ export default function HeroBanner({
           className="object-cover"
           priority
         />
-        {/* Dark overlay for text contrast */}
         <div className="absolute inset-0 bg-black/30" />
-        {/* Text and optional button */}
         <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
-          <h1 className="font-display text-5xl font-semibold text-white md:w-2/3 md:text-7xl">
+          <h1 className="font-display text-background text-5xl font-semibold md:w-2/3 md:text-7xl">
             {heading}
           </h1>
           {button && (
@@ -67,7 +55,7 @@ export default function HeroBanner({
                 className={cn(
                   `px-8 py-3 text-base font-medium`,
                   button.className ??
-                    "bg-[#3faf54] text-[#003f15] hover:bg-[#3faf54]/90"
+                    "text-primary bg-chart-4 hover:bg-chart-4/90"
                 )}
               >
                 {button.text}

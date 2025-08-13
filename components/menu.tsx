@@ -46,8 +46,8 @@ export default function Menu() {
   }
 
   return (
-    <div className="w-full">
-      <nav className="sticky top-[6rem] z-40 w-full border-b border-[#EDEAE0] bg-[#F9F6E5] py-1 md:top-[7rem] md:py-2">
+    <div className="mb-[20rem] w-full">
+      <nav className="bg-sidebar border-border sticky top-[6rem] z-40 w-full border-b py-1 md:top-[7rem] md:py-2">
         <ul className="mx-auto flex max-w-7xl overflow-x-auto px-4 py-3 text-sm font-medium md:justify-center md:space-x-8 md:text-base">
           {categories.map((cat) => {
             const isActive = activeId === cat.id
@@ -96,12 +96,12 @@ export default function Menu() {
                     />
                     <div className="text-primary absolute top-3 right-3 flex space-x-2 text-lg font-semibold">
                       {item.isGlutenFree && (
-                        <span className="size-10 place-content-center-safe rounded-full bg-[#7CA7D6] text-center">
+                        <span className="bg-chart-1 size-10 place-content-center-safe rounded-full text-center">
                           GF
                         </span>
                       )}
                       {item.isVegan && (
-                        <span className="size-10 place-content-center-safe rounded-full bg-[#3FAF54] text-center">
+                        <span className="bg-chart-4 size-10 place-content-center-safe rounded-full text-center">
                           V
                         </span>
                       )}
